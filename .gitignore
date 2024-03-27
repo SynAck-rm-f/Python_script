@@ -6,3 +6,5 @@
 *.iml
 out
 gen
+__pycache__/*
+test_rsa.key
