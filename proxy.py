@@ -38,7 +38,7 @@ def receive_from(connection):
     try:
         # We set up a loop to read
         # response data into the buffer
-        # keep reading into the buffer until there's no more data or we time-out
+        # keep reading into the buffer until there's no more data, or we time out
         while True:
             data = connection.recv(4096)
             if not data:
@@ -152,7 +152,7 @@ def server_loop(local_host, local_port, remote_host, remote_port,
     while True:
         # when a fresh connection request
         # comes in, we hand it off to the proxy_handler in a new thread which does
-        # all of the sending and receiving of juicy bits to either side of the data stream.
+        # all  the sending and receiving of juicy bits to either side of the data stream.
         client_socket, addr = server.accept()
 
         # print out the local connection information
@@ -170,7 +170,7 @@ def main():
     if len(sys.argv[1:]) != 5:
         print("Usage: ./proxy.py [localhost] [localport] [remotehost] "
               "[remoteport] [receive_first]")
-        print("Example: ./proxy.py 127.0.0.1 9000 10.12.132.1 9000 True")
+        print("Example: ./proxy.py 172.17.32.1 21 172.17.46.177 21 True")
         sys.exit(0)
 
     # setup local listening parameters
@@ -194,4 +194,5 @@ def main():
     server_loop(local_host, local_port, remote_host, remote_port, receive_first)
 
 
-main()
+if __name__ == '__main__':
+    main()

@@ -21,7 +21,7 @@ def run_command(cmd):
 
     # run the command and get the output back
     try:
-        output = subprocess.check_output(cmd, stderr=subprocess.STDOUT,shell=True)
+        output = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
     except subprocess.CalledProcessError as e:
         output = e.output
 
@@ -106,7 +106,7 @@ def server_loop():
         client_socket, addr = server.accept()
 
         # spin off a thread to handle our new client
-        client_thread = threading.Thread(target=client_handler,args=(client_socket,))
+        client_thread = threading.Thread(target=client_handler, args=(client_socket,))
         client_thread.start()
 
 
@@ -233,4 +233,5 @@ def main():
         server_loop()
 
 
-main()
+if __name__ == '__main__':
+    main()
