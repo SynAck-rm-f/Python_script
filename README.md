@@ -15,5 +15,8 @@ Covered topics include:
 - SSH client/server interactions
 - Basic post-exploitation concepts in controlled environments
 
+Personal notes and structured documentation related to this project are maintained separately in a private Obsidian knowledge base.
+
 The scripts are executed exclusively in local or isolated lab environments
 (VMs, intentionally vulnerable systems, and test networks).
+
